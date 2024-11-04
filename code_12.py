@@ -1,8 +1,19 @@
 def get_fibonacci_number(position):
-    pass #Remove this line and insert your code here. Do not forget this function implements recursion.
+    
+    if position == 1:
+        return 1
+    elif position == 2:
+        return 1
+    return get_fibonacci_number(position - 1) + get_fibonacci_number(position - 2)
 
 def get_fibonacci_number_sequence(number):
-    pass #Remove this line and insert your code here. Do not forget to use get_fibonacci_number to create your list of numbers.
+    stored_numbers = []
+    for i in range(1, number + 1):
+        stored_numbers.append(get_fibonacci_number(i))
+    return stored_numbers
 
 if __name__ == "__main__":
-    pass #Remove this line and insert your code to test your Fibonacci function here
+    # Example output for Fibonacci number at a specific position
+    print(get_fibonacci_number(6))  # Should output 8
+    # Example output for Fibonacci sequence up to a specified number of elements
+    print(get_fibonacci_number_sequence(9))  # Should output [1, 1, 2, 3, 5, 8, 13, 21, 34]
